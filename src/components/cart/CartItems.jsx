@@ -18,7 +18,7 @@ const CartItems = () => {
 
     <div>
        <button 
-      onClick={()=>navigate("/")}
+      onClick={()=>navigate(-1)}
       className='mt-10 bg-pink-600 text-white px-4 py-2 rounded-lg shadow hover:bg-pink-700 transition-colors duration-200'>← Go Back</button>
 
     <div className='flex flex-col lg:flex-row p-4 lg:p-8 space-y-6 lg:space-y-0 lg:space-x-6'> 
