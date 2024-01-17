@@ -2,18 +2,27 @@ import React from 'react'
 import { MdDelete } from "react-icons/md";
 import Payments from './Payments';
 import useShop from '../../context/ShopContext';
+import { useNavigate } from 'react-router-dom';
+
 
 
 
 
 const CartItems = () => {
   
+  
   const {products, removeFromCart, updatedProductQuantity}=useShop()
- 
+ const navigate = useNavigate()
       
   return (
 
+    <div>
+       <button 
+      onClick={()=>navigate("/")}
+      className='mt-10 bg-pink-600 text-white px-4 py-2 rounded-lg shadow hover:bg-pink-700 transition-colors duration-200'>← Go Back</button>
+
     <div className='flex flex-col lg:flex-row p-4 lg:p-8 space-y-6 lg:space-y-0 lg:space-x-6'> 
+    
 
     <div className='flex-1 '>
       <h2 className='text-2xl font-semibold mb-4'>{products.length > 0 ? 'Your cart items': 'Your cart is empty now please go a head and add some items'}</h2>
@@ -46,7 +55,7 @@ const CartItems = () => {
     </div>
     <Payments/>
     </div>
-  
+  </div>
   )
 }
 
